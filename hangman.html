@@ -1,51 +1,49 @@
-   <!--- a way to take user input
-    - a way to score
-    - keeping track of the number of guesses
-    - keeping track of the number of the wrong guesses
-    - a way to build correct guesses
-    - use if else statements
 
-    whats needed:
-    - a way to take user input
-    - a way to score:
-        * use if/else to determine if the user types in correct letter in word... if (correct letter) is typed, add letter to display and add point if win, and subtract from the #of wrong guesses allowed.
-          else subtract from the wrong guesses...
-             1) var (maxwrongguesses) var (wrongguessesleft) and make sure we dont run out of wrong guesses.
-    - keeping track of the number of guesses
-    - keeping track of the number of the wrong guesses
-    - a way to build correct guesses
-    - a way to reset the game
-    use variables to store guesses, use counters to count number of guesses left, variable of max guesses
-	place to put underscores
-    !-->
-
-   <!Doctype html>
+<!Doctype html>
 <html lang="en-us">
 
 <head>
   <meta charset="UTF-8">
   <title>About | Your Name</title>
+  <link rel="stylesheet" href="assets/css/hangman.css">
 </head>
+<h1 align="center">Hang Krillin!</h1>
 
-<body>
-
-<h1>Hangman</h1>
-
-<br>
-<br>
-<div class="floatright">Press any key to get started!</p>
-<br>
-<div class="wins">Wins</div>
-<br>
-<div class="currentword">Current Word</div>
-<br>
-<div class="guess">Number of guesses remaining
-
-</div>
-
-
-
+<script type="text/javascript">
   
-</body>
+var words = [
+"Seattle", "Anaheim", "Newark", "Dallas"];
 
+var word = words[Math.floor(Math.random() * words.length)];
+
+var answers = [];
+for (var i=0; i<word.length; i++) {
+  answers[i] = "_";
+}
+
+var remaining = word.length;
+
+while (remaining > 0) {
+  alert(answers.join(" "));
+  var guess = prompt("The subject is Cities. First letter is capitalized.");
+  if (guess === null) {
+    break;
+  } else if (guess.length !==1) {
+    alert("Please enter a single letter");
+  } else {
+
+    for (var j = 0; j < word.length; j++) {
+      if (word[j] === guess){
+        answers[j] = guess;
+        remaining--;
+
+      }
+    
+    }
+  }
+}
+
+alert(answers.join(" "));
+alert("Good job! The answer was " + word);
+</script>
 </html>
