@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman Game</title>
+	<link rel ="stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/hangman.css">
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class = "container">
+	<div class = "jumbotron">
+		Hangman
+		<br>
+		<p>Press any key to start!</p>
+	</div>
+	<div class = "panel panel-default">
+		<div class = "panel panel-heading">
+			<h3 class = "panel-title">Guess the Word! Topic: Greek/Roman Mythology + 1 secret!</h3>
+		</div>
+		<div class ="panel-body">
+			<h2 id ="wordGuess">_ _ _</h2>
+		</div>
+	</div>
+	
+	<div class = "panel panel-default">
+		<div class = "panel panel-heading">
+			Number of wrong letters: <span id="numberWrong"></span>
+		</div>
+	</div>
+
+	<div class = "panel panel-default">
+		<div class = "panel panel-heading">
+			Number of guesses left: <span id="numberLeft"></span>
+		</div>
+	</div>
+
+	<div class = "panel panel-default">
+		<div class = "panel panel-heading">
+			Wins: <span id ="numWins">0</span>
+		</div>
+	</div>
+
+	<div class = "panel panel-default">
+		<div class = "panel panel-heading">
+			Losses: <span id ="numLosses">0</span>
+		</div>
+	</div>
+	
+</div>
+
+<script src="assets/JS/app.js"></script>
+</body>
+</html>
